@@ -1,160 +1,1095 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ashwin's Portfolio</title>
-  <link rel="icon" type="image/png" href="logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashwin — Your Production-Friendly Full-stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Ashwin — Full-Stack Developer, AI Enthusiast, and Production-Friendly Engineer specializing in Java (Spring Boot), React.js, LLMs, and RAG pipelines." />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ashwin — Full-Stack Developer | AI Enthusiast | Production-Friendly Engineer" />
+  <meta property="og:description"
+    content="Full-Stack Developer, AI Enthusiast & Production-Friendly Engineer building scalable systems and GenAI architectures." />
 
-  <!-- Tailwind CSS -->
+  <!-- Google Fonts: SF Pro & Apple Typography Aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: [
+              '-apple-system',
+              'BlinkMacSystemFont',
+              '"SF Pro Display"',
+              '"SF Pro Text"',
+              '"Plus Jakarta Sans"',
+              'Inter',
+              'system-ui',
+              'sans-serif'
+            ],
+            mono: ['SF Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          },
+          colors: {
+            apple: {
+              gray: '#86868b',
+              lightGray: '#f5f5f7',
+              darkBg: '#000000',
+              darkCard: '#161617',
+              darkCardBorder: 'rgba(255, 255, 255, 0.08)',
+              lightCardBorder: 'rgba(0, 0, 0, 0.06)',
+              blue: '#0071e3',
+              blueHover: '#0077ED',
+              neonBlue: '#2997ff',
+              subtleDark: '#121214',
+            }
+          },
+          boxShadow: {
+            'apple-sm': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
+            'apple-md': '0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04)',
+            'apple-lg': '0 24px 48px -12px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04)',
+            'apple-glow': '0 0 40px rgba(0, 113, 227, 0.15)',
+            'apple-dark-sm': '0 2px 8px rgba(0, 0, 0, 0.3)',
+            'apple-dark-md': '0 12px 32px rgba(0, 0, 0, 0.4)',
+            'apple-dark-lg': '0 24px 60px rgba(0, 0, 0, 0.6)',
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/b2fa8a0b2d.js" crossorigin="anonymous"></script>
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-    }
-    .navbar-brand img {
-      height: 40px;
-    }
-    .card img {
-      height: 200px;
-      object-fit: cover;
-    }
-  </style>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" alt="Logo">
+<body
+  class="bg-white dark:bg-[#000000] text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors duration-300 selection:bg-[#0071e3]/20 selection:text-[#0071e3]">
+
+  <!-- macOS / iOS Glassmorphism Header Bar -->
+  <header class="fixed top-0 inset-x-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+
+      <!-- Brand / Logo -->
+      <a href="#" class="flex items-center space-x-2.5 group focus:outline-none" aria-label="Ashwin Home">
+        <div
+          class="w-8 h-8 rounded-full bg-gradient-to-tr from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 flex items-center justify-center text-white dark:text-black font-semibold text-sm tracking-tighter shadow-sm group-hover:scale-105 transition-transform duration-200">
+          <span>A</span>
+        </div>
+        <span class="font-semibold text-sm tracking-tight inline-block text-[#1d1d1f] dark:text-white">
+          Ashwin N S
+        </span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+
+      <!-- Desktop Nav Links -->
+      <nav id="desktopNav"
+        class="hidden md:flex items-center space-x-1 lg:space-x-2 text-xs font-medium tracking-tight text-[#86868b] dark:text-[#a1a1a6]">
+        <a href="#experience"
+          class="nav-link px-3 py-1.5 rounded-full hover:text-[#1d1d1f] dark:hover:text-white transition-all duration-200">Experience</a>
+        <a href="#projects"
+          class="nav-link px-3 py-1.5 rounded-full hover:text-[#1d1d1f] dark:hover:text-white transition-all duration-200">Projects</a>
+        <a href="#education"
+          class="nav-link px-3 py-1.5 rounded-full hover:text-[#1d1d1f] dark:hover:text-white transition-all duration-200">Education</a>
+        <a href="#skills"
+          class="nav-link px-3 py-1.5 rounded-full hover:text-[#1d1d1f] dark:hover:text-white transition-all duration-200">Skills</a>
+      </nav>
+
+      <!-- Action Items & Theme Toggle -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- Adaptive Theme Toggle -->
+        <button id="themeToggle"
+          class="w-8 h-8 rounded-full flex items-center justify-center text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-all focus:outline-none"
+          aria-label="Toggle Theme">
+          <i data-lucide="moon" id="moonIcon" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="sun" id="sunIcon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+
+        <!-- GitHub Profile link -->
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+          class="flex w-8 h-8 rounded-full items-center justify-center text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-all focus:outline-none"
+          aria-label="GitHub Profile" title="GitHub Profile">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+            </path>
+          </svg>
+        </a>
+
+        <!-- LinkedIn Profile link -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+          class="flex w-8 h-8 rounded-full items-center justify-center text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-all focus:outline-none"
+          aria-label="LinkedIn Profile" title="LinkedIn Profile">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.67 1.67 0 0 0 1.67-1.66c0-.92-.75-1.66-1.67-1.66Z" />
+          </svg>
+        </a>
+
+        <!-- Contact CTA Button -->
+        <a href="#contact"
+          class="inline-flex items-center justify-center text-xs font-semibold px-4 py-1.5 rounded-full bg-[#1d1d1f] text-white hover:bg-[#333336] dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-all shadow-sm hover:scale-105 active:scale-95">
+          Contact
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobileMenuBtn"
+          class="md:hidden w-8 h-8 rounded-full flex items-center justify-center text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white focus:outline-none"
+          aria-label="Open Menu">
+          <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+        </button>
       </div>
     </div>
-  </nav>
 
-  <!-- Intro -->
-  <section id="intro" class="py-5 bg-white text-center">
-    <div class="container">
-      <img src="photo.jpg" alt="Ashwin" class="rounded-circle shadow mb-3" width="150">
-      <h1 class="text-4xl font-bold">Ashwin</h1>
-      <p class="text-lg">Aspiring Full Stack Web Developer</p>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-3">About Me</h2>
-      <p class="lead">I am currently pursuing BCA at KLE College. I have a strong interest in full-stack development and enjoy building dynamic web applications. I'm passionate about learning and staying updated with modern technologies.</p>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-3">Skills</h2>
-      <div class="row text-center">
-        <div class="col-md-4 mb-4">
-          <h5 class="font-semibold">Front-End</h5>
-          <span class="badge bg-primary me-2">HTML</span>
-          <span class="badge bg-primary me-2">CSS</span>
-          <span class="badge bg-primary">React</span>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="font-semibold">Back-End</h5>
-          <span class="badge bg-secondary me-2">Node.js</span>
-          <span class="badge bg-secondary">Express</span>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="font-semibold">Tools & DB</h5>
-          <span class="badge bg-info me-2">Git</span>
-          <span class="badge bg-info me-2">MongoDB</span>
-          <span class="badge bg-info">MySQL</span>
-        </div>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu"
+      class="hidden md:hidden px-6 pt-2 pb-6 border-t border-black/5 dark:border-white/10 bg-white/95 dark:bg-[#121214]/95 backdrop-blur-xl">
+      <div class="flex flex-col space-y-3 text-sm font-medium pt-2">
+        <a href="#experience"
+          class="mobile-nav-link py-2 text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white">Experience</a>
+        <a href="#projects"
+          class="mobile-nav-link py-2 text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white">Featured Projects</a>
+        <a href="#education"
+          class="mobile-nav-link py-2 text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white">Education</a>
+        <a href="#skills" class="mobile-nav-link py-2 text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white">Skills
+          & Stack</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+          class="mobile-nav-link py-2 text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+            </path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+          class="mobile-nav-link py-2 text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-white flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.67 1.67 0 0 0 1.67-1.66c0-.92-.75-1.66-1.67-1.66Z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link py-2 text-apple-blue font-semibold">Get in Touch &rarr;</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Education -->
-  <section id="education" class="py-5">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-3">Education</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body">
-              <h5 class="card-title">KLE College</h5>
-              <p class="card-text">BCA - 2023</p>
+  <main class="relative pt-20 sm:pt-28 pb-12">
+
+    <!-- Background Ambient Glow (Active in Dark Mode Only) -->
+    <div
+      class="absolute top-16 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[450px] bg-transparent blur-3xl pointer-events-none -z-10 dark:bg-gradient-to-b dark:from-blue-600/15 dark:to-transparent">
+    </div>
+
+
+    <!-- HERO SECTION (SIDE-BY-SIDE MOVIE POSTER & COPY) -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8 pb-12 sm:pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <!-- LEFT SIDE: Cinematic Movie-Poster Portrait Showcase with Seamless Gradient Blend -->
+        <div class="lg:col-span-5 order-2 lg:order-1 flex justify-center lg:justify-start">
+          <div class="poster-container w-full max-w-xs sm:max-w-sm md:max-w-md relative group">
+            <!-- Ambient Cinematic Spotlight Glow Behind Portrait -->
+            <div class="poster-glow"></div>
+
+            <!-- Movie Poster Seamless Container (Borderless Canvas Blend) -->
+            <div class="relative transition-all duration-500 group-hover:scale-[1.01]">
+              <!-- Portrait Image with Multi-stop Feather Mask -->
+              <img id="heroPortraitImg" src="assets/ashwin.jpg" alt="Ashwin N S - Software Engineer &amp; AI Developer"
+                class="w-full h-auto max-h-[460px] sm:max-h-[520px] object-cover object-top poster-mask transition-all duration-700 group-hover:contrast-[1.02]"
+                loading="eager" />
+
+              <!-- Seamless Multi-Directional Gradient Blend Overlay -->
+              <div class="poster-gradient-overlay"></div>
+
+              <!-- Subtle Apple Floating Badges over the poster -->
+              <div
+                class="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10 px-1">
+                <div
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card text-xs font-medium text-[#1d1d1f] dark:text-[#f5f5f7] shadow-sm backdrop-blur-md">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>Ashwin N S</span>
+                </div>
+                <div
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card text-xs font-medium text-[#1d1d1f] dark:text-[#f5f5f7] shadow-sm backdrop-blur-md">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-apple-blue"></i>
+                  <span>Project Engineer</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body">
-              <h5 class="card-title">PU College</h5>
-              <p class="card-text">PCMCs - 2020</p>
-            </div>
+
+        <!-- RIGHT SIDE: Headline, Typewriter, Bio & CTAs -->
+        <div class="lg:col-span-7 order-1 lg:order-2 text-center lg:text-left">
+          <!-- Live Status Pill (Dynamic Island Vibe) -->
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card mb-4 sm:mb-6 shadow-apple-sm text-xs font-medium text-[#1d1d1f] dark:text-[#f5f5f7]">
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>Available for Full-Stack &amp; Generative AI Roles</span>
+            <span class="text-[#86868b] dark:text-[#a1a1a6] hidden sm:inline">&bull; 2026</span>
+          </div>
+
+          <!-- Hero Subhead -->
+          <p
+            class="text-xs sm:text-sm font-semibold tracking-wider uppercase text-apple-blue dark:text-apple-neonBlue mb-2">
+            Ashwin &mdash; Full-Stack Developer &bull; AI Enthusiast
+          </p>
+
+          <!-- Main Landing Title -->
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.18] mb-4 sm:mb-5">
+            <span class="text-gradient block sm:inline">Your production friendly </span><br class="hidden sm:block" />
+            <span class="inline-flex items-center text-gradient-blue min-h-[1.25em] sm:mt-1 pb-1">
+              <span id="roleFlipper" class="inline-block min-w-[0.5ch]">engineer.</span><span class="typing-cursor"
+                aria-hidden="true"></span>
+            </span>
+          </h1>
+
+          <!-- Value Proposition -->
+          <p
+            class="text-sm sm:text-base md:text-lg text-[#86868b] dark:text-[#a1a1a6] leading-relaxed font-normal mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0">
+            Full-Stack Developer, AI Enthusiast &amp; Production-Friendly Engineer with 1+ years of experience
+            engineering
+            scalable web applications and intelligent systems. Specializes in building end-to-end architectures using
+            Java
+            (Spring Boot), React.js, and cloud native services, with dedicated hands-on expertise in LLMs, RAG
+            pipelines,
+            and vector search.
+          </p>
+
+          <!-- Primary Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4">
+            <a href="#experience"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-apple-blue hover:bg-apple-blueHover text-white text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-apple-glow hover:scale-[1.02] active:scale-[0.98]">
+              <i data-lucide="briefcase" class="w-4 h-4"></i>
+              <span>View Experience</span>
+            </a>
+
+            <a href="#projects"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-black/5 hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/15 text-[#1d1d1f] dark:text-white text-sm font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+              <span>Explore Projects</span>
+              <i data-lucide="arrow-down" class="w-4 h-4 text-[#86868b]"></i>
+            </a>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body">
-              <h5 class="card-title">GHS</h5>
-              <p class="card-text">High School - 2018</p>
+
+      </div>
+    </section>
+
+    <!-- SECTION: EXPERIENCE (APPLE BENTO BOX STYLE - COMPACT) -->
+    <section id="experience" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <p class="text-xs font-semibold uppercase tracking-wider text-apple-blue dark:text-apple-neonBlue mb-1">
+          Career Trajectory
+        </p>
+        <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-gradient">
+          Work Experience.
+        </h2>
+        <p class="text-xs sm:text-sm text-[#86868b] dark:text-[#a1a1a6] mt-1.5">
+          Enterprise engineering, backend optimization, and cloud deployment pipelines.
+        </p>
+      </div>
+
+      <!-- Experience Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <!-- Experience Bento 1: Wipro Ltd -->
+        <div
+          class="bento-card glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-apple-md hover:shadow-apple-lg border border-black/5 dark:border-white/10 relative overflow-hidden group">
+          <div
+            class="absolute -right-20 -top-20 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-indigo-500/20 transition-all duration-500">
+          </div>
+
+          <div>
+            <!-- Top Badges -->
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="flex items-center space-x-2.5">
+                <div
+                  class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-sm font-bold text-xs">
+                  <i data-lucide="layers" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3
+                    class="text-xs sm:text-sm font-bold text-[#1d1d1f] dark:text-white uppercase tracking-tight flex items-center gap-1.5">
+                    <span>Wipro Ltd</span>
+                    <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  </h3>
+                  <p class="text-[11px] text-[#86868b] dark:text-[#a1a1a6]">Enterprise Engineering</p>
+                </div>
+              </div>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold">
+                Recent &bull; 1+ Year
+              </span>
+            </div>
+
+            <h4
+              class="text-base sm:text-lg font-bold tracking-tight text-[#1d1d1f] dark:text-white mb-2 group-hover:text-apple-blue dark:group-hover:text-apple-neonBlue transition-colors">
+              Java Full Stack Developer
+            </h4>
+
+            <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed mb-3.5">
+              Built and maintained enterprise full-stack features using Spring Boot services and React.js interfaces.
+            </p>
+
+            <ul class="space-y-1.5 text-xs text-[#434344] dark:text-[#d2d2d7] mb-4">
+              <li class="flex items-start gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-blue-500/10 text-apple-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-2.5 h-2.5"></i>
+                </div>
+                <span>Engineered RESTful microservices with Spring Boot &amp; Spring Data JPA.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-blue-500/10 text-apple-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-2.5 h-2.5"></i>
+                </div>
+                <span>Optimized SQL queries &amp; indexing, significantly cutting API response latency.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-blue-500/10 text-apple-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-2.5 h-2.5"></i>
+                </div>
+                <span>Developed modular React.js UI components with JWT authentication &amp; state management.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Java</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Spring
+                Boot</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">React.js</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">MySQL</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">REST
+                APIs</span>
             </div>
           </div>
+
+          <div
+            class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-[11px] text-[#86868b] dark:text-[#a1a1a6]">
+            <span class="font-mono">Full-Stack Delivery</span>
+            <span class="text-apple-blue dark:text-apple-neonBlue font-semibold">Production Ready</span>
+          </div>
         </div>
+
+        <!-- Experience Bento 2: Infinite Computer Solutions -->
+        <div
+          class="bento-card glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-apple-md hover:shadow-apple-lg border border-black/5 dark:border-white/10 relative overflow-hidden group">
+          <div
+            class="absolute -right-20 -top-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all duration-500">
+          </div>
+
+          <div>
+            <!-- Top Badges -->
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="flex items-center space-x-2.5">
+                <div
+                  class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white shadow-sm font-bold text-xs">
+                  <i data-lucide="cloud-lightning" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-xs sm:text-sm font-bold text-[#1d1d1f] dark:text-white uppercase tracking-tight">
+                    Infinite Computer Solutions
+                  </h3>
+                  <p class="text-[11px] text-[#86868b] dark:text-[#a1a1a6]">Cloud &amp; DevOps</p>
+                </div>
+              </div>
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-blue-500/10 text-apple-blue dark:text-apple-neonBlue text-[11px] font-semibold">
+                Internship &bull; 2023
+              </span>
+            </div>
+
+            <h4
+              class="text-base sm:text-lg font-bold tracking-tight text-[#1d1d1f] dark:text-white mb-2 group-hover:text-blue-500 transition-colors">
+              DevOps Intern
+            </h4>
+
+            <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed mb-3.5">
+              Implemented automated CI/CD deployment pipelines for containerized microservices on AWS cloud.
+            </p>
+
+            <ul class="space-y-1.5 text-xs text-[#434344] dark:text-[#d2d2d7] mb-4">
+              <li class="flex items-start gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-blue-500/10 text-apple-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-2.5 h-2.5"></i>
+                </div>
+                <span>Built automated CI/CD workflows with GitHub Actions for testing &amp; Docker packaging.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-blue-500/10 text-apple-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-2.5 h-2.5"></i>
+                </div>
+                <span>Provisioned AWS cloud infrastructure including EC2 instances, S3 storage &amp; Lambda.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-blue-500/10 text-apple-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-2.5 h-2.5"></i>
+                </div>
+                <span>Monitored deployment health and executed zero-downtime container rollouts.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">AWS
+                Cloud</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Docker</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">GitHub
+                Actions</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">CI/CD</span>
+            </div>
+          </div>
+
+          <div
+            class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-[11px] text-[#86868b] dark:text-[#a1a1a6]">
+            <span class="font-mono">Infrastructure as Code</span>
+            <span class="text-blue-500 font-semibold">Completed</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- SECTION: FEATURED PROJECTS (APPLE BENTO BOX GRID - COMPACT) -->
+      <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-wider text-apple-blue dark:text-apple-neonBlue mb-1">
+            Featured Projects
+          </p>
+          <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-gradient">
+            Crafted with intelligence.
+          </h2>
+          <p class="text-xs sm:text-sm text-[#86868b] dark:text-[#a1a1a6] mt-1.5">
+            Full-stack architectures, GenAI retrieval systems, and decoupled cloud microservices.
+          </p>
+        </div>
+
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+
+          <!-- Bento Item 1: Multi-PDF RAG AI Chatbot -->
+          <div
+            class="bento-card glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-apple-md hover:shadow-apple-lg border border-black/5 dark:border-white/10 relative overflow-hidden group">
+            <div
+              class="absolute -right-20 -top-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all duration-500">
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-3.5">
+                <span
+                  class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-apple-blue dark:text-apple-neonBlue text-[11px] font-semibold tracking-wide">
+                  <i data-lucide="bot" class="w-3 h-3"></i>
+                  GenAI &bull; RAG
+                </span>
+                <span
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-medium">
+                  ⚡ FAISS
+                </span>
+              </div>
+
+              <h3
+                class="text-lg sm:text-xl font-bold tracking-tight text-[#1d1d1f] dark:text-white mb-2 group-hover:text-apple-blue dark:group-hover:text-apple-neonBlue transition-colors">
+                Multi-PDF RAG AI Chatbot
+              </h3>
+              <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed mb-4">
+                Interactive document retrieval system using LangChain, FAISS vector embeddings, and OpenAI APIs for
+                semantic QA over complex PDFs with conversational memory.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Python</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">LangChain</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">FAISS</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">OpenAI
+                  API</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Streamlit</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 font-semibold text-apple-blue dark:text-apple-neonBlue hover:underline">
+                <span>View Repo</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <span class="font-mono text-[11px] text-[#86868b]">Semantic Search</span>
+            </div>
+          </div>
+
+          <!-- Bento Item 2: eCommerce Microservices Engine -->
+          <div
+            class="bento-card glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-apple-md hover:shadow-apple-lg border border-black/5 dark:border-white/10 relative overflow-hidden group">
+            <div>
+              <div class="flex items-center justify-between mb-3.5">
+                <span
+                  class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[11px] font-semibold tracking-wide">
+                  <i data-lucide="server" class="w-3 h-3"></i>
+                  Backend &bull; Cloud
+                </span>
+                <span
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-500/10 text-apple-blue dark:text-apple-neonBlue text-[11px] font-medium">
+                  🔒 JWT Auth
+                </span>
+              </div>
+
+              <h3
+                class="text-lg sm:text-xl font-bold tracking-tight text-[#1d1d1f] dark:text-white mb-2 group-hover:text-purple-500 transition-colors">
+                eCommerce Microservices
+              </h3>
+              <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed mb-4">
+                Secure, decoupled backend services for authentication, catalog, checkout, and payment workflows built
+                with Spring Boot, Spring Data JPA, and MySQL.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Java</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Spring
+                  Boot</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">MySQL</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">REST
+                  APIs</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 font-semibold text-purple-600 dark:text-purple-400 hover:underline">
+                <span>View Source</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <span class="font-mono text-[11px] text-[#86868b]">Enterprise Spring</span>
+            </div>
+          </div>
+
+          <!-- Bento Item 3: Real-Time News Portal -->
+          <div
+            class="bento-card glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-apple-md hover:shadow-apple-lg border border-black/5 dark:border-white/10 relative overflow-hidden group">
+            <div>
+              <div class="flex items-center justify-between mb-3.5">
+                <span
+                  class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[11px] font-semibold tracking-wide">
+                  <i data-lucide="newspaper" class="w-3 h-3"></i>
+                  Frontend Web App
+                </span>
+                <span
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-medium">
+                  ⚡ Live API
+                </span>
+              </div>
+
+              <h3
+                class="text-lg sm:text-xl font-bold tracking-tight text-[#1d1d1f] dark:text-white mb-2 group-hover:text-amber-500 transition-colors">
+                Real-Time News Portal
+              </h3>
+              <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed mb-4">
+                Dynamic frontend aggregation app built with React.js and NewsAPI, featuring category filtering, infinite
+                scrolling, and real-time state management.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">React.js</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">JavaScript</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">NewsAPI</span>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Bootstrap</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 font-semibold text-amber-600 dark:text-amber-400 hover:underline">
+                <span>View Project</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+              <span class="font-mono text-[11px] text-[#86868b]">Live Ingestion</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: EDUCATION (MINIMALIST TIMELINE) -->
+      <section id="education" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <p class="text-xs font-semibold uppercase tracking-wider text-apple-blue dark:text-apple-neonBlue mb-1">
+            Academic Foundation
+          </p>
+          <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-gradient">
+            Education &amp; Background.
+          </h2>
+          <p class="text-xs sm:text-sm text-[#86868b] dark:text-[#a1a1a6] mt-1.5">
+            Engineering rigor, analytical foundation, and honors.
+          </p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative pl-6 sm:pl-10 border-l border-black/10 dark:border-white/10 space-y-10 ml-2 sm:ml-4">
+
+          <!-- Timeline Node 1: B.E. Mechatronics -->
+          <div class="relative group">
+            <!-- Timeline Indicator Dot -->
+            <div
+              class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-black border-2 border-apple-blue shadow-sm flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-apple-blue"></span>
+            </div>
+
+            <!-- Header & Time -->
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1.5">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <h3 class="text-lg sm:text-xl font-bold tracking-tight text-[#1d1d1f] dark:text-white">
+                  B.E. in Mechatronics Engineering
+                </h3>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[11px] font-semibold">
+                  8.58 CGPA &bull; Distinction
+                </span>
+              </div>
+              <span class="text-xs font-medium text-[#86868b] dark:text-[#a1a1a6] whitespace-nowrap">
+                2020 &ndash; 2023
+              </span>
+            </div>
+
+            <!-- Institution -->
+            <p class="text-xs sm:text-sm font-semibold text-apple-blue dark:text-apple-neonBlue mb-2">
+              Thiagarajar College of Engineering
+            </p>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed max-w-2xl mb-3">
+              Graduated with First Class with Distinction. Specialized in interdisciplinary software development,
+              automated control systems, robotics, and embedded systems integration.
+            </p>
+
+            <!-- Core Areas -->
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Data
+                Structures &amp; Algorithms</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Robotics
+                &amp; Automation</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Embedded
+                Computing</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Systems
+                Architecture</span>
+            </div>
+          </div>
+
+          <!-- Timeline Node 2: Diploma in Mechanical Engineering -->
+          <div class="relative group">
+            <!-- Timeline Indicator Dot -->
+            <div
+              class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-black border-2 border-emerald-500 shadow-sm flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            </div>
+
+            <!-- Header & Time -->
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1.5">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <h3 class="text-lg sm:text-xl font-bold tracking-tight text-[#1d1d1f] dark:text-white">
+                  Diploma in Mechanical Engineering
+                </h3>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold">
+                  91% Aggregate &bull; Honors
+                </span>
+              </div>
+              <span class="text-xs font-medium text-[#86868b] dark:text-[#a1a1a6] whitespace-nowrap">
+                2017 &ndash; 2020
+              </span>
+            </div>
+
+            <!-- Institution -->
+            <p class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
+              KLN Polytechnic College
+            </p>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed max-w-2xl mb-3">
+              Graduated with an outstanding 91% aggregate score, establishing foundational analytical reasoning,
+              mathematical modeling, and precision systems thinking.
+            </p>
+
+            <!-- Core Areas -->
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Applied
+                Physics</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Mathematical
+                Modeling</span>
+              <span
+                class="px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-medium text-[#434344] dark:text-[#d2d2d7]">Precision
+                Engineering</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: SKILLS & PHILOSOPHY (COMPACT & FIT-TO-SCREEN) -->
+      <section id="skills" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-wider text-apple-blue dark:text-apple-neonBlue mb-1">
+            Technical Arsenal
+          </p>
+          <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-gradient">
+            Skills &amp; Capabilities.
+          </h2>
+          <p class="text-xs sm:text-sm text-[#86868b] dark:text-[#a1a1a6] mt-1.5">
+            Practical tools consumed in production with a continuous hunger for emerging tech.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+
+          <!-- Left Column: Biography & Philosophy (Minimal & Crisp) -->
+          <div class="lg:col-span-5 flex flex-col">
+            <div
+              class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-apple-md border border-black/5 dark:border-white/10 flex flex-col justify-between h-full space-y-4">
+              <div class="space-y-3">
+                <div>
+                  <p
+                    class="text-xs font-semibold uppercase tracking-wider text-apple-blue dark:text-apple-neonBlue mb-1">
+                    Philosophy
+                  </p>
+                  <h3 class="text-lg sm:text-xl font-bold tracking-tight text-[#1d1d1f] dark:text-white">
+                    Assets in Production.
+                  </h3>
+                </div>
+
+                <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed">
+                  Skills are practical assets, not static badges &mdash; justified through direct consumption in
+                  production across Java, Spring Boot microservices, React frontends, and cloud CI/CD.
+                </p>
+
+                <p class="text-xs sm:text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed">
+                  Curious by nature, I actively learn emerging frontiers &mdash; from Generative AI and RAG pipelines to
+                  vector search &mdash; quickly turning exploration into reliable code.
+                </p>
+              </div>
+
+              <!-- Crisp Highlights -->
+              <div class="pt-3 border-t border-black/5 dark:border-white/10 space-y-2">
+                <div class="flex items-center gap-2 text-xs text-[#1d1d1f] dark:text-white font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-apple-blue flex-shrink-0"></span>
+                  <span><strong>Production Consumed:</strong> Scalable APIs &amp; UI</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-[#1d1d1f] dark:text-white font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                  <span><strong>Active Learning:</strong> GenAI, RAG &amp; Vector Stores</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-[#1d1d1f] dark:text-white font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 flex-shrink-0"></span>
+                  <span><strong>Pragmatic Focus:</strong> Fast, robust &amp; clean execution</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Categorized Technical Skills -->
+          <div class="lg:col-span-7 flex flex-col">
+
+            <div
+              class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-apple-md border border-black/5 dark:border-white/10 flex flex-col justify-between h-full space-y-4">
+              <h3 class="text-base sm:text-lg font-bold text-[#1d1d1f] dark:text-white flex items-center gap-2">
+                <i data-lucide="code" class="w-4 h-4 text-apple-blue"></i>
+                <span>Core Tech Stack</span>
+              </h3>
+
+              <div class="space-y-4">
+                <!-- Languages & Frameworks -->
+                <div>
+                  <h4
+                    class="text-[11px] font-semibold uppercase tracking-wider text-[#86868b] dark:text-[#a1a1a6] mb-1.5">
+                    Languages &amp; Frameworks
+                  </h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Java</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Python</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">JavaScript</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Spring
+                      Boot</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">React.js</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">LangChain</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Streamlit</span>
+                  </div>
+                </div>
+
+                <!-- AI & Machine Learning -->
+                <div>
+                  <h4
+                    class="text-[11px] font-semibold uppercase tracking-wider text-[#86868b] dark:text-[#a1a1a6] mb-1.5">
+                    AI &amp; Machine Learning
+                  </h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">RAG
+                      Pipelines</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Prompt
+                      Engineering</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">FAISS
+                      Vector Search</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">OpenAI
+                      API</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Hugging
+                      Face</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Claude
+                      &bull; LLaMA</span>
+                  </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div>
+                  <h4
+                    class="text-[11px] font-semibold uppercase tracking-wider text-[#86868b] dark:text-[#a1a1a6] mb-1.5">
+                    Cloud &amp; DevOps
+                  </h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">AWS
+                      (S3, Lambda, EC2)</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">AWS
+                      Bedrock</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">GitHub
+                      Actions</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Docker</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">CI/CD
+                      Pipelines</span>
+                  </div>
+                </div>
+
+                <!-- Databases & Tools -->
+                <div>
+                  <h4
+                    class="text-[11px] font-semibold uppercase tracking-wider text-[#86868b] dark:text-[#a1a1a6] mb-1.5">
+                    Databases &amp; Tools
+                  </h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">MySQL</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">MongoDB</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">RESTful
+                      APIs</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">JWT
+                      Auth</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">OAuth
+                      2.0</span>
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-black/5 dark:bg-white/5 text-[11px] sm:text-xs font-medium hover:bg-apple-blue/10 hover:text-apple-blue dark:hover:text-apple-neonBlue transition-colors">Postman</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: CONTACT & CONNECT (COMPACT & FIT-TO-SCREEN) -->
+      <section id="contact" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+        <div
+          class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-apple-lg border border-black/5 dark:border-white/10 relative overflow-hidden">
+
+          <div class="absolute -left-20 -bottom-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none">
+          </div>
+
+          <div class="max-w-xl mx-auto text-center mb-6">
+            <p class="text-xs font-semibold uppercase tracking-wider text-apple-blue dark:text-apple-neonBlue mb-1">
+              Initiate Contact
+            </p>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-gradient">
+              Let’s build something extraordinary.
+            </h2>
+            <p class="text-xs sm:text-sm text-[#86868b] dark:text-[#a1a1a6] mt-1.5">
+              Discuss full-stack architectures, GenAI solutions, or engineering opportunities.
+            </p>
+          </div>
+
+          <!-- Interactive Client-side Contact Form -->
+          <form id="contactForm" class="max-w-lg mx-auto space-y-3.5">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label for="nameInput"
+                  class="block text-[11px] font-medium text-[#86868b] dark:text-[#a1a1a6] mb-1 ml-1">Your Name</label>
+                <input type="text" id="nameInput" required placeholder="Ada Lovelace"
+                  class="w-full px-3.5 py-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.05] border border-black/10 dark:border-white/10 text-xs sm:text-sm text-[#1d1d1f] dark:text-white placeholder-[#86868b] focus:outline-none focus:ring-2 focus:ring-apple-blue/50 transition-all" />
+              </div>
+
+              <div>
+                <label for="emailInput"
+                  class="block text-[11px] font-medium text-[#86868b] dark:text-[#a1a1a6] mb-1 ml-1">Email
+                  Address</label>
+                <input type="email" id="emailInput" required placeholder="ada@example.com"
+                  class="w-full px-3.5 py-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.05] border border-black/10 dark:border-white/10 text-xs sm:text-sm text-[#1d1d1f] dark:text-white placeholder-[#86868b] focus:outline-none focus:ring-2 focus:ring-apple-blue/50 transition-all" />
+              </div>
+            </div>
+
+            <div>
+              <label for="messageInput"
+                class="block text-[11px] font-medium text-[#86868b] dark:text-[#a1a1a6] mb-1 ml-1">Message</label>
+              <textarea id="messageInput" required rows="3"
+                placeholder="Hi Ashwin, I'd love to connect regarding an engineering role..."
+                class="w-full px-3.5 py-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.05] border border-black/10 dark:border-white/10 text-xs sm:text-sm text-[#1d1d1f] dark:text-white placeholder-[#86868b] focus:outline-none focus:ring-2 focus:ring-apple-blue/50 transition-all resize-none"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitBtn"
+              class="w-full py-2.5 sm:py-3 px-5 rounded-xl bg-apple-blue hover:bg-apple-blueHover text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-apple-glow flex items-center justify-center gap-2 active:scale-[0.99] focus:outline-none">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="submitBtnText">Send Message</span>
+            </button>
+
+            <!-- Toast Feedback -->
+            <div id="formSuccessToast"
+              class="hidden p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs text-center font-medium animate-fade-in">
+              ✓ Message received! Thank you for reaching out.
+            </div>
+          </form>
+
+          <!-- Direct Contact Shortcuts -->
+          <div
+            class="mt-6 pt-5 border-t border-black/5 dark:border-white/10 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#86868b] dark:text-[#a1a1a6]">
+            <button id="copyEmailBtn"
+              class="inline-flex items-center gap-1.5 hover:text-[#1d1d1f] dark:hover:text-white transition-colors focus:outline-none">
+              <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+              <span id="emailText">ashwin.dev@example.com</span>
+              <span id="copiedTooltip" class="text-apple-blue hidden text-[11px] font-semibold">(Copied!)</span>
+            </button>
+
+            <span class="text-black/10 dark:text-white/10">&bull;</span>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 hover:text-[#1d1d1f] dark:hover:text-white transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current text-[#0a66c2]" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.67 1.67 0 0 0 1.67-1.66c0-.92-.75-1.66-1.67-1.66Z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <span class="text-black/10 dark:text-white/10">&bull;</span>
+
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 hover:text-[#1d1d1f] dark:hover:text-white transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                </path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+  </main>
+
+  <!-- APPLE MINIMALIST FOOTER -->
+  <footer
+    class="border-t border-black/5 dark:border-white/10 bg-[#f5f5f7] dark:bg-[#0a0a0c] text-[#86868b] dark:text-[#a1a1a6] text-xs py-10 transition-colors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+
+        <!-- Copyright & Credits -->
+        <div class="flex items-center space-x-2">
+          <span>&copy; <span id="currentYear"></span> Ashwin.</span>
+          <span>I built this portfolio inspired from Apple ui/ux design.</span>
+        </div>
+
+        <!-- Live Status & GitHub Pages indicator -->
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span id="localClock" class="font-mono text-[11px]">--:--:--</span>
+          </div>
+          <span class="text-black/10 dark:text-white/10">&bull;</span>
+          <span class="font-mono text-[11px]">Deployed on GitHub Pages</span>
+        </div>
+
       </div>
     </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-3xl font-bold mb-3">Projects</h2>
-      <p class="lead">Will be updated soon.</p>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-5">
-    <div class="container text-center">
-      <h2 class="text-3xl font-bold mb-3">Contact</h2>
-      <div class="d-flex justify-content-center gap-4">
-        <a href="mailto:ashwin@example.com" class="text-dark"><i class="fa-solid fa-envelope fa-2x"></i></a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-dark"><i class="fa-brands fa-linkedin fa-2x"></i></a>
-        <a href="https://github.com/yourprofile" target="_blank" class="text-dark"><i class="fa-brands fa-github fa-2x"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-4 bg-dark text-white">
-    <p>&copy; 2025 Ashwin's Portfolio</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+
 </body>
+
 </html>

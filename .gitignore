@@ -1,0 +1,23 @@
+# Image files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.svg
+*.ico
+*.bmp
+*.tiff
+*.avif
+
+# Specific assets image files
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.webp
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
